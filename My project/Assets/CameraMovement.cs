@@ -20,6 +20,8 @@ public class CameraMovement : MonoBehaviour
     void Update()
     {
         motion = new Vector3(0, Input.GetAxisRaw("Horizontal"), 0);
+        // xThrow = movement.ReadValue<Vector2>().x;
+        // yThrow = movement.ReadValue<Vector2>().y;
         m_EulerAngleVelocity = motion * speed;
 
         Quaternion deltaRotation = Quaternion.Euler(m_EulerAngleVelocity * Time.fixedDeltaTime);
