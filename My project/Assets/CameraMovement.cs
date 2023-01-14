@@ -18,6 +18,6 @@ public class CameraMovement : MonoBehaviour
     void Update()
     {
         motion = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical"));
-        rb.velocity = motion * speed;   
+        rb.velocity = motion * speed;
     }
 }
