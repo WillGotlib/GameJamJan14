@@ -5,8 +5,8 @@ using UnityEngine;
 public class ObjectClick : MonoBehaviour
 {
     
-    float distractionTime;
-    
+    public float distractionTime = 5f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -23,6 +23,16 @@ public class ObjectClick : MonoBehaviour
     {
         // t$$anonymous$$s object was clicked - do somet$$anonymous$$ng
         Debug.Log("Object was clicked");
+        StartCoroutine(Test());
         // Destroy (t$$anonymous$$s.gameObject);
     } 
+
+    IEnumerator Test()
+    {
+        /* STOP PROGRESS BAR HERE */
+        yield return new WaitForSeconds(5f);
+        
+        /* RESUME PROGRESS BAR HERE */
+        Debug.Log("Object click expired.");
+    }
 }
